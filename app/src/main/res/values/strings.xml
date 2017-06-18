@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">CleaningTracker</string>
+    <string name="instructions">Click below when you have done your housework!</string>
+    <string name="button">Add job to database</string>
+</resources>
