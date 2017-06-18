@@ -26,7 +26,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     //required override of the onCreate method
     //which is implemented when the database is created for the first time
     //and builds the SQL command needed to build the table
-
     @Override
     public void onCreate(SQLiteDatabase db) {
         String CREATE_CLEANING_TABLE = "CREATE TABLE " + TABLE_CLEANING +
@@ -34,7 +33,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 CleaningContract.CleaningEntry._ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
                 CleaningContract.CleaningEntry.COLUMN_HOUSEMATE + " TEXT NOT NULL," +
                 CleaningContract.CleaningEntry.COLUMN_ACTIVITY_DONE + " TEXT NOT NULL, " +
-                CleaningContract.CleaningEntry.COLUMN_ACTIVITY_DURATION + " TEXT" +
+                CleaningContract.CleaningEntry.COLUMN_ACTIVITY_DURATION + " INTEGER NOT NULL" +
                 ")";
 
         db.execSQL(CREATE_CLEANING_TABLE);
