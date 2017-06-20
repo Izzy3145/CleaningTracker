@@ -31,13 +31,13 @@ public class MainActivity extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                insertPet();
+                insertJob();
                 displayDatabase();
             }
         });
     }
 
-    private void insertPet(){
+    private void insertJob() {
         //create a SQL database in writeable mode, ready to take the ContentValues
         mDatabase = mDbHelper.getWritableDatabase();
 
@@ -54,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     //method used to display cursor object in TextView on main screen
-    private void displayDatabase() {
+    private Cursor displayDatabase() {
 
         //create a readable database
         mDatabase = mDbHelper.getReadableDatabase();
@@ -104,6 +104,8 @@ public class MainActivity extends AppCompatActivity {
             //close cursor to save memory
             cursor.close();
         }
+
+        return cursor;
     }
 
 }
